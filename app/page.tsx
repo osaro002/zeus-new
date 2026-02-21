@@ -45,7 +45,15 @@ const projects = [
 
 const videos = [
   { title: "Character Animation Showcase", youtubeId: "yTQT_3cm9tg" },
-  { title: "Modeling Timelapse", youtubeId: "LeWJoBgMss0" },
+  { title: "Character Animation Showcase", youtubeId: "LeWJoBgMss0" },
+  { title: "Character Animation Showcase", youtubeId: "wUypZeHlX_I" },
+  { title: "Character Animation Showcase", youtubeId: "lx8LeFjgrWk" },
+  { title: "Character Animation Showcase", youtubeId: "CPBugRq1-5I" },
+  { title: "Character Animation Showcase", youtubeId: "mYYTbbADqOk" },
+  { title: "Character Animation Showcase", youtubeId: "YYReU4pc4Sw" },
+  { title: "Character Animation Showcase", youtubeId: "4LlGdl5Dtx4" },
+  { title: "Character Animation Showcase", youtubeId: "HJUVAlfbZ00" },
+  { title: "Character Animation Showcase", youtubeId: "vi6OKcawewc" },
 ];
 
 export default function Home() {
