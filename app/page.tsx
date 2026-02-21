@@ -44,8 +44,8 @@ const projects = [
 ];
 
 const videos = [
-  { title: "Character Animation Showcase", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Modeling Timelapse", youtubeId: "dQw4w9WgXcQ" },
+  { title: "Character Animation Showcase", youtubeId: "yTQT_3cm9tg" },
+  { title: "Modeling Timelapse", youtubeId: "LeWJoBgMss0" },
 ];
 
 export default function Home() {
