@@ -1,226 +1,65 @@
-"use client";
-
-import { motion } from "framer-motion";
-import { ExternalLink, Wand2, Sparkles, Hammer, Video } from "lucide-react";
-import { FaDiscord } from "react-icons/fa"; // Discord icon from react-icons
-
-// Replace with your images in /public/projects folder
-const projects = [
-  { title: "Project 1", description: "Stylized model.", image: "/projects/project1.webp" },
-  { title: "Project 2", description: "Minecraft-style creature.", image: "/projects/project2.webp" },
-  { title: "Project 3", description: "Fantasy NPC.", image: "/projects/project3.webp" },
-  { title: "Project 4", description: "Animated mob.", image: "/projects/project4.webp" },
-  { title: "Project 5", description: "Stylized villain.", image: "/projects/project5.webp" },
-  { title: "Project 6", description: "Custom weapon pack.", image: "/projects/project6.webp" },
-];
-
-// 10 video slots (replace youtubeId with your own)
-const videos = [
-  { title: "Video 1", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 2", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 3", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 4", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 5", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 6", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 7", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 8", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 9", youtubeId: "dQw4w9WgXcQ" },
-  { title: "Video 10", youtubeId: "dQw4w9WgXcQ" },
-];
+import Image from "next/image";
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-zinc-950 text-zinc-100">
-      {/* Navbar */}
-      <nav className="sticky top-0 z-50 border-b border-zinc-800 bg-zinc-950/80 backdrop-blur-md">
-        <div className="mx-auto flex max-w-6xl items-center justify-between px-6 py-4">
-          <h1 className="text-lg font-bold tracking-wide">Zeus Studio</h1>
-          <div className="hidden gap-6 text-sm text-zinc-300 md:flex">
-            <a className="hover:text-white" href="#work">Work</a>
-            <a className="hover:text-white" href="#videos">Videos</a>
-            <a className="hover:text-white" href="#services">Services</a>
-            <a className="hover:text-white" href="#contact">Contact</a>
-          </div>
+    <div className="flex min-h-screen items-center justify-center bg-zinc-50 font-sans dark:bg-black">
+      <main className="flex min-h-screen w-full max-w-3xl flex-col items-center justify-between py-32 px-16 bg-white dark:bg-black sm:items-start">
+        <Image
+          className="dark:invert"
+          src="/next.svg"
+          alt="Next.js logo"
+          width={100}
+          height={20}
+          priority
+        />
+        <div className="flex flex-col items-center gap-6 text-center sm:items-start sm:text-left">
+          <h1 className="max-w-xs text-3xl font-semibold leading-10 tracking-tight text-black dark:text-zinc-50">
+            To get started, edit the page.js file.
+          </h1>
+          <p className="max-w-md text-lg leading-8 text-zinc-600 dark:text-zinc-400">
+            Looking for a starting point or more instructions? Head over to{" "}
+            <a
+              href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Templates
+            </a>{" "}
+            or the{" "}
+            <a
+              href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+              className="font-medium text-zinc-950 dark:text-zinc-50"
+            >
+              Learning
+            </a>{" "}
+            center.
+          </p>
+        </div>
+        <div className="flex flex-col gap-4 text-base font-medium sm:flex-row">
           <a
-            href="https://discord.gg/reDExuwD"
+            className="flex h-12 w-full items-center justify-center gap-2 rounded-full bg-foreground px-5 text-background transition-colors hover:bg-[#383838] dark:hover:bg-[#ccc] md:w-[158px]"
+            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
             target="_blank"
-            className="rounded-xl bg-white px-4 py-2 text-sm font-semibold text-black flex items-center gap-2 transition hover:bg-zinc-200"
+            rel="noopener noreferrer"
           >
-            <FaDiscord size={18} /> Join Discord
+            <Image
+              className="dark:invert"
+              src="/vercel.svg"
+              alt="Vercel logomark"
+              width={16}
+              height={16}
+            />
+            Deploy Now
+          </a>
+          <a
+            className="flex h-12 w-full items-center justify-center rounded-full border border-solid border-black/[.08] px-5 transition-colors hover:border-transparent hover:bg-black/[.04] dark:border-white/[.145] dark:hover:bg-[#1a1a1a] md:w-[158px]"
+            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Documentation
           </a>
         </div>
-      </nav>
-
-      {/* Hero */}
-      <section className="mx-auto max-w-6xl px-6 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 25 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7 }}
-          className="flex flex-col gap-6"
-        >
-          <p className="inline-flex w-fit items-center gap-2 rounded-full border border-zinc-800 bg-zinc-900 px-4 py-2 text-xs text-zinc-300">
-            <Sparkles size={14} />
-            Game-ready assets • Clean animations • Fast delivery
-          </p>
-
-          <h2 className="text-4xl font-extrabold leading-tight md:text-6xl">
-            Captivating Models <br /> and Animations.
-          </h2>
-
-          <p className="max-w-2xl text-lg text-zinc-300">
-            Zeus Studio is a creative 3D brand focused on crafting stylized
-            characters, creatures, and animations for games. I deliver optimized
-            assets built with clean structure and smooth motion — perfect for
-            Hytale-style and Minecraft-inspired projects.
-          </p>
-
-          <div className="flex flex-wrap gap-4">
-            <a href="#work" className="rounded-xl bg-white px-6 py-3 font-semibold text-black transition hover:bg-zinc-200">
-              View My Work
-            </a>
-            <a href="#contact" className="rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition hover:border-zinc-500">
-              Contact Me
-            </a>
-          </div>
-
-          <div className="mt-6 flex flex-wrap gap-3 text-sm text-zinc-400">
-            <span className="rounded-full border border-zinc-800 px-4 py-2">Blockbench</span>
-            <span className="rounded-full border border-zinc-800 px-4 py-2">Blender</span>
-            <span className="rounded-full border border-zinc-800 px-4 py-2">Character Modeling</span>
-            <span className="rounded-full border border-zinc-800 px-4 py-2">Animation</span>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Work */}
-      <section id="work" className="mx-auto max-w-6xl px-6 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold">Featured Work</h3>
-          <p className="mt-2 text-zinc-400">A selection of my strongest models and projects.</p>
-          <div className="mt-10 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {projects.map((project, i) => (
-              <motion.div key={i} whileHover={{ y: -6 }} transition={{ duration: 0.25 }}
-                className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
-                <div className="h-52 w-full bg-zinc-800">
-                  <img src={project.image} alt={project.title} className="h-full w-full object-cover" />
-                </div>
-                <div className="p-5">
-                  <h4 className="text-lg font-semibold">{project.title}</h4>
-                  <p className="mt-2 text-sm text-zinc-400">{project.description}</p>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Videos */}
-      <section id="videos" className="mx-auto max-w-6xl px-6 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold">Video Showcase</h3>
-          <p className="mt-2 text-zinc-400">Quick previews of my animations and modeling work.</p>
-          <div className="mt-10 grid gap-8 md:grid-cols-2">
-            {videos.map((video, i) => (
-              <div key={i} className="overflow-hidden rounded-2xl border border-zinc-800 bg-zinc-900">
-                <div className="flex items-center gap-2 border-b border-zinc-800 px-5 py-4">
-                  <Video size={18} className="text-zinc-400" />
-                  <h4 className="font-semibold">{video.title}</h4>
-                </div>
-                <div className="aspect-video w-full">
-                  <iframe
-                    className="h-full w-full"
-                    src={`https://www.youtube.com/embed/${video.youtubeId}`}
-                    title={video.title}
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                    allowFullScreen
-                  ></iframe>
-                </div>
-              </div>
-            ))}
-          </div>
-          <p className="mt-6 text-sm text-zinc-500">
-            Tip: Replace the YouTube IDs with your own uploaded unlisted videos.
-          </p>
-        </motion.div>
-      </section>
-
-      {/* Services */}
-      <section id="services" className="mx-auto max-w-6xl px-6 py-16">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-        >
-          <h3 className="text-3xl font-bold">Services</h3>
-          <p className="mt-2 text-zinc-400">What I can deliver for your project.</p>
-          <div className="mt-10 grid gap-6 md:grid-cols-3">
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-              <Wand2 className="text-zinc-300" />
-              <h4 className="mt-4 text-lg font-semibold">Character Modeling</h4>
-              <p className="mt-2 text-sm text-zinc-400">Custom stylized characters with clean shapes and game-ready optimization.</p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-              <Sparkles className="text-zinc-300" />
-              <h4 className="mt-4 text-lg font-semibold">Character Animation</h4>
-              <p className="mt-2 text-sm text-zinc-400">Smooth animation cycles, combat moves, idle loops, and custom motion.</p>
-            </div>
-            <div className="rounded-2xl border border-zinc-800 bg-zinc-900 p-6">
-              <Hammer className="text-zinc-300" />
-              <h4 className="mt-4 text-lg font-semibold">Plugins</h4>
-              <p className="mt-2 text-sm text-zinc-400">Plugin-based support for creative projects and custom features.</p>
-            </div>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Contact */}
-      <section id="contact" className="mx-auto max-w-6xl px-6 py-20">
-        <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.6 }}
-          viewport={{ once: true }}
-          className="rounded-3xl border border-zinc-800 bg-zinc-900 p-10"
-        >
-          <h3 className="text-3xl font-bold">Let’s Work Together</h3>
-          <p className="mt-3 max-w-2xl text-zinc-400">Join my Discord server for inquiries or project discussions.</p>
-
-          <div className="mt-8 flex flex-wrap gap-4">
-            <a
-              href="https://discord.gg/reDExuwD"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-xl bg-white px-6 py-3 font-semibold text-black transition hover:bg-zinc-200"
-            >
-              <FaDiscord size={18} /> Join Discord
-            </a>
-
-            <a
-              href="https://www.fiverr.com/zeus_hytale"
-              target="_blank"
-              className="inline-flex items-center gap-2 rounded-xl border border-zinc-700 px-6 py-3 font-semibold text-white transition hover:border-zinc-500"
-            >
-              <ExternalLink size={18} /> Fiverr Profile
-            </a>
-          </div>
-        </motion.div>
-      </section>
-
-      {/* Footer */}
-      <footer className="border-t border-zinc-800 py-10 text-center text-sm text-zinc-500">
-        © {new Date().getFullYear()} Zeus Studio. All rights reserved.
-      </footer>
+      </main>
     </div>
   );
 }
